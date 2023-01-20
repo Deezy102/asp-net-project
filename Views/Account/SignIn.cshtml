@@ -1,0 +1,25 @@
+@model asp_net_project.ViewModels.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login Form</h2>
+
+<form class="container-fluid m-auto bg-white p-5 border round" asp-action="SignIn" asp-controller="Account" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="mb-3">
+            <label asp-for="Login">Введите логин</label>
+            <input type="text" asp-for="Login" />
+            <span asp-validation-for="Login" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password">Введите пароль</label>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Войти" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
